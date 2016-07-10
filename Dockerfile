@@ -7,7 +7,7 @@ MAINTAINER Raymond Wen "rx.wen218@gmail.com"
 #RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 #RUN apt-get install -y oracle-java8-installer bsdtar
 
-RUN apt-get install -y bison g++-multilib git gperf libxml2-utils make zlib1g-dev:i386 zip zlib1g:i386 libxml2-utils u-boot-tools
+RUN apt-get update && apt-get install -y bison g++-multilib git gperf libxml2-utils make zlib1g-dev:i386 zip zlib1g:i386 libxml2-utils u-boot-tools
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo -o /usr/bin/repo && chmod +x /usr/bin/repo
 
 # Cleaning
