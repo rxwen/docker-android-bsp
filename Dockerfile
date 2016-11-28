@@ -9,7 +9,7 @@ MAINTAINER Raymond Wen "rx.wen218@gmail.com"
 
 RUN apt-get update && apt-get install -y curl bison g++-multilib git gperf libxml2-utils make zlib1g-dev zip zlib1g libxml2-utils u-boot-tools python
 RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y zlib1g-dev:i386 zlib1g:i386 
-COPY jdk1.6.0_45.tgz /opt/
+ADD jdk1.6.0_45.tgz /opt/
 ENV JAVA_HOME /opt/jdk1.6.0_45
 ENV PATH $PATH:$JAVA_HOME/bin
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo -o /usr/bin/repo && chmod +x /usr/bin/repo
