@@ -8,11 +8,10 @@ MAINTAINER Raymond Wen "rx.wen218@gmail.com"
 #RUN apt-get install -y oracle-java8-installer bsdtar
 
 RUN apt-get update && apt-get install -y curl bison git gperf libxml2-utils make zlib1g-dev zip zlib1g libxml2-utils u-boot-tools python flex mtd-utils expect
-RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y zlib1g-dev:i386 zlib1g:i386 g++-multilib 
+RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y zlib1g-dev:i386 zlib1g:i386
 ADD jdk1.6.0_45.tgz /opt/
 ENV JAVA_HOME /opt/jdk1.6.0_45
 ENV PATH $PATH:$JAVA_HOME/bin
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo -o /usr/bin/repo && chmod +x /usr/bin/repo
 
-# Cleaning
-RUN apt-get clean
+RUN apt-get install -y g++-multilib
