@@ -7,7 +7,7 @@ MAINTAINER Raymond Wen "rx.wen218@gmail.com"
 #RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 #RUN apt-get install -y oracle-java8-installer bsdtar
 
-RUN apt-get update && apt-get install -y curl bison git gperf libxml2-utils make zlib1g-dev zip zlib1g libxml2-utils u-boot-tools python flex mtd-utils expect libssl-dev lzop
+RUN apt-get update && apt-get install -y curl bison git gperf libxml2-utils make zlib1g-dev zip zlib1g libxml2-utils u-boot-tools python flex mtd-utils expect libssl-dev lzop bc
 RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y zlib1g-dev:i386 zlib1g:i386
 ADD jdk1.6.0_45.tgz /opt/
 ENV JAVA_HOME /opt/jdk1.6.0_45
