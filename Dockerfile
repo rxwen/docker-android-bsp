@@ -1,14 +1,12 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 MAINTAINER Raymond Wen "rx.wen218@gmail.com"
 
-# Install java8
-#RUN apt-get install -y software-properties-common && add-apt-repository -y ppa:webupd8team/java && apt-get update
-#RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
-#RUN apt-get install -y oracle-java8-installer bsdtar
-
-RUN apt-get update && apt-get install -y curl bison git gperf libxml2-utils make zlib1g-dev zip zlib1g libxml2-utils u-boot-tools python flex mtd-utils expect libssl-dev lzop bc
-RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y zlib1g-dev:i386 zlib1g:i386
+RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y \
+        bison g++-multilib gcc-multilib libudev-dev libxml2-utils zlib1g\
+        libjpeg-dev libx11-dev libxext-dev libssl-dev zip flex make python \
+        libexpat1-dev curl wget git libc6-i386 libstdc++6:i386 zlib1g-dev:i386 \
+        u-boot-tools libssl-dev lzop bc gperf mtd-utils expect
 ADD jdk1.6.0_45.tgz /opt/
 ENV JAVA_HOME /opt/jdk1.6.0_45
 ENV PATH $PATH:$JAVA_HOME/bin
