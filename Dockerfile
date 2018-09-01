@@ -6,7 +6,7 @@ RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y \
         bison g++-multilib gcc-multilib libudev-dev libxml2-utils zlib1g\
         libjpeg-dev libx11-dev libxext-dev libssl-dev zip flex make python \
         libexpat1-dev curl wget git libc6-i386 libstdc++6:i386 zlib1g-dev:i386 \
-        u-boot-tools libssl-dev lzop bc gperf mtd-utils expect
+        u-boot-tools libssl-dev lzop bc gperf mtd-utils expect device-tree-compiler
 ADD jdk1.6.0_45.tgz /opt/
 ENV JAVA_HOME /opt/jdk1.6.0_45
 ENV PATH $PATH:$JAVA_HOME/bin
