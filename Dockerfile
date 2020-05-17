@@ -7,7 +7,8 @@ RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y \
         libjpeg-dev libx11-dev libxext-dev libssl-dev zip flex make python zsh \
         libexpat1-dev curl wget git libc6-i386 libstdc++6:i386 zlib1g-dev:i386 \
         u-boot-tools libssl-dev lzop bc gperf mtd-utils expect device-tree-compiler \
-        lcov clang-format-6.0 clang-tidy-6.0 libsqlite3-dev software-properties-common
+        lcov clang-format-6.0 clang-tidy-6.0 libsqlite3-dev software-properties-common \
+        net-tools
 RUN ln -s /usr/bin/clang-format-6.0 /usr/bin/clang-format
 RUN ln -s /usr/bin/clang-6.0 /usr/bin/clang
 RUN ln -s /usr/bin/clang-tidy-6.0 /usr/bin/clang-tidy
