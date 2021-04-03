@@ -17,7 +17,6 @@ ENV JAVA_HOME /opt/jdk1.6.0_45
 ENV PATH $PATH:$JAVA_HOME/bin
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo -o /usr/bin/repo && chmod +x /usr/bin/repo
 RUN curl https://musl.cc/arm-linux-musleabi-cross.tgz | tar zxv
-RUN mkdir /opt
 RUN mv arm-linux-musleabi-cross /opt
 ENV PATH $PATH:/opt/arm-linux-musleabi-cross/bin
 
